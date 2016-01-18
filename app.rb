@@ -5,9 +5,11 @@ class App
     @filename = filename
   end
 
-  def run word
+  def run *words
     open(filename, 'a') do |f|
-      f << word
+      words.each do |word|
+        f << word + "\n"
+      end
     end
   end
 
